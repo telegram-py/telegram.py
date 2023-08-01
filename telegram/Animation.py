@@ -1,26 +1,21 @@
-from .PhotoSize import PhotoSize
-from .content import content
-
-
 class Animation:
-    def __init__(self):
-        self.file_id: str = None
-        self.file_unique_id: str = None
-        self.width: int = None
-        self.height: int = None
-        self.duration: int = None
-        self.thumb: PhotoSize = None
-        self.file_name: str = None
-        self.mime_type: str = None
-        self.file_size: int = None
+    file_id: str
+    file_unique_id: str
+    width: int
+    height: int
+    duration: int
+    thumbnail: PhotoSize
+    file_name: str
+    mime_type: str
+    file_size: int
 
-    def set_data(self, context):
-        self.file_id: str = content(context, 'file_id')
-        self.file_unique_id: str = content(context, 'file_unique_id')
-        self.width: int = content(context, 'width')
-        self.height: int = content(context, 'height')
-        self.duration: int = content(context, 'duration')
-        self.thumb: PhotoSize = PhotoSize().set_data('thumb')
-        self.file_name: str = content(context, 'file_name')
-        self.mime_type: str = content(context, 'mime_type')
-        self.file_size: int = content(context, 'file_size')
+    def __init__(self, **kwargs):
+        self.file_id = kwargs.get('file_id', '')
+        self.file_unique_id = kwargs.get('file_unique_id', '')
+        self.width = kwargs.get('width', 0)
+        self.height = kwargs.get('height', 0)
+        self.duration = kwargs.get('duration', 0)
+        self.thumbnail = PhotoSize(**kwargs.get('thumbnail', None))
+        self.file_name = kwargs.get('file_name', None)
+        self.mime_type = kwargs.get('mime_type', None)
+        self.file_size = kwargs.get('file_size', None)

@@ -1,17 +1,13 @@
-from content import content
-
-
-def Contact():
-    def __init__(self):
-        self.phone_number: str = None
-        self.first_name: str = None
-        self.last_name: str = None
-        self.user_id: int = None
-        self.vcard: int = None
-
-    def set_data(self, context):
-        self.phone_number: str = content(context, "phone_number")
-        self.first_name: str = content(context, "first_name")
-        self.last_name: str = content(context, "last_name")
-        self.user_id: int = content(context, "user_id")
-        self.vcard: int = content(context, "vcard")
+class MyContact:
+    phone_number: str
+    first_name: str
+    last_name: str
+    user_id: int
+    vcard: str
+    
+    def __init__(self, **kwargs):
+        self.phone_number = kwargs.get('phone_number')
+        self.first_name = kwargs.get('first_name')
+        self.last_name = kwargs.get('last_name')
+        self.user_id = kwargs.get('user_id')
+        self.vcard = kwargs.get('vcard')

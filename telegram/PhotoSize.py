@@ -1,17 +1,13 @@
-from .content import content
-
-
 class PhotoSize:
-    def __init__(self):
-        self.file_id: str = None
-        self.file_unique_id: str = None
-        self.width: int = None
-        self.height: int = None
-        self.file_size: int = None
-
-    def set_data(self, context):
-        self.file_id: str = content(context, "file_id")
-        self.file_unique_id: str = content(context, "file_unique_id")
-        self.width: int = content(context, "width")
-        self.height: int = content(context, "height")
-        self.file_size: int = content(context, "file_size")
+    file_id : str
+    file_unique_id : str
+    width : int
+    height : int
+    file_size : int
+    
+    def __init__(self, **kwargs):
+        self.file_id: str = kwargs.get('file_id', '')
+        self.file_unique_id: str = kwargs.get('file_unique_id', '')
+        self.width: int = int(kwargs.get('width', 0))
+        self.height: int = int(kwargs.get('height', 0))
+        self.file_size: int = int(kwargs.get('file_size', 0))

@@ -1,22 +1,16 @@
-from User import User
-from content import content
-
-
 class MessageEntity:
-    def __init__(self):
-        self.type: str = None
-        self.offset: int = None
-        self.length: int = None
-        self.url: str = None
-        self.user: User = None
-        self.language: str = None
-        self.custom_emoji_id: str = None
-
-    def set_data(self, context):
-        self.type: str = context(context, 'type')
-        self.offset: int = context(context, 'offset')
-        self.length: int = context(context, 'length')
-        self.url: str = context(context, 'url')
-        self.user: User = User().set_data(context['User'])
-        self.language: str = context(context, 'language')
-        self.custom_emoji_id: str = context(context, 'custom_emoji_id')
+    type : str
+    offset : int
+    length : int
+    url : str
+    user : User
+    language : str
+    custom_emoji_id : str
+    def __init__(self, **kwargs):
+        self.type = kwargs.get('entity_type', None)
+        self.offset = kwargs.get('offset', None)
+        self.length = kwargs.get('length', None)
+        self.url = kwargs.get('url', None)
+        self.user = User(**kwargs.get('user', None))
+        self.language = kwargs.get('language', None)
+        self.custom_emoji_id = kwargs.get('custom_emoji_id', None)
