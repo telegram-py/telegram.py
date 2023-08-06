@@ -1,10 +1,10 @@
-class MyContact:
+class Contact:
     phone_number: str
     first_name: str
     last_name: str
     user_id: int
     vcard: str
-    
+
     def __init__(self, **kwargs):
         self.phone_number = kwargs.get('phone_number')
         self.first_name = kwargs.get('first_name')

@@ -1,14 +1,18 @@
+from telegram.classes.User import User
+
+
 class ChatInviteLink:
-    invite_link : str
-    creator : User
-    creates_join_request : bool
-    is_primary : bool
-    is_revoked : bool
-    name : str
-    expire_date : int
-    member_limit : int
-    pending_join_request_count : int
-    def __init__(self,**kwargs):
+    invite_link: str
+    creator: User
+    creates_join_request: bool
+    is_primary: bool
+    is_revoked: bool
+    name: str
+    expire_date: int
+    member_limit: int
+    pending_join_request_count: int
+
+    def __init__(self, **kwargs):
         self.invite_link = kwargs.get('invite_link', "")
         self.creator = User(**kwargs.get('creator', dict()))
         self.creates_join_request = kwargs.get('creates_join_request', False)

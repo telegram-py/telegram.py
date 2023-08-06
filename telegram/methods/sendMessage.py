@@ -1,0 +1,1 @@
+def send_message(chat_id : str | int , text : str , message_thread_id : int = None ,parse_mode: str)

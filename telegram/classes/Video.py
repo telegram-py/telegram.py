@@ -1,3 +1,6 @@
+from telegram.classes.PhotoSize import PhotoSize
+
+
 class Video:
     file_id: str
     file_unique_id: str
@@ -8,7 +11,7 @@ class Video:
     file_name: str
     mime_type: str
     file_size: int
-    
+
     def __init__(self, **kwargs):
         self.file_id = kwargs.get('file_id')
         self.file_unique_id = kwargs.get('file_unique_id')

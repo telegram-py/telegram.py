@@ -1,12 +1,17 @@
+from telegram.classes.User import User
+from telegram.classes.Message import Message
+
+
 class CallbackQuery:
-    id : str
-    from_user : User
-    message : Message
-    inline_message_id : str
-    chat_instance : str
-    data : str
-    game_short_name : str
-    def __init__(self,**kwargs):
+    id: str
+    from_user: User
+    message: Message
+    inline_message_id: str
+    chat_instance: str
+    data: str
+    game_short_name: str
+
+    def __init__(self, **kwargs):
         self.id = kwargs.get('id', "")
         self.from_user = User(**kwargs.get('from_user', dict()))
         self.message = Message(**kwargs.get('message', dict()))

@@ -1,32 +1,39 @@
+from telegram.classes.ChatPhoto import ChatPhoto
+from telegram.classes.Message import Message
+from telegram.classes.ChatPermissions import ChatPermissions
+from telegram.classes.ChatLocation import ChatLocation
+
+
 class Chat:
-    id : int
-    type : str
-    title : str
-    username : str
-    first_name : str
-    last_name : str
-    is_forum : bool
-    photo : ChatPhoto
-    active_usernames : list
-    emoji_status_custom_emoji_id : str
-    bio : str
-    has_private_forwards : bool
-    has_restricted_voice_and_video_messages : bool
-    join_to_send_messages : bool
-    join_by_request : bool
-    description : str
-    invite_link : str
-    pinned_message : Message
-    permissions : ChatPermissions
-    slow_mode_delay : int
-    message_auto_delete_time : int
-    has_aggressive_anti_spam_enabled : bool
-    has_hidden_members : bool
-    has_protected_content : bool
-    sticker_set_name : str
-    can_set_sticker_set : bool
-    linked_chat_id : int
-    location : ChatLocation
+    id: int
+    type: str
+    title: str
+    username: str
+    first_name: str
+    last_name: str
+    is_forum: bool
+    photo: ChatPhoto
+    active_usernames: list
+    emoji_status_custom_emoji_id: str
+    bio: str
+    has_private_forwards: bool
+    has_restricted_voice_and_video_messages: bool
+    join_to_send_messages: bool
+    join_by_request: bool
+    description: str
+    invite_link: str
+    pinned_message: Message
+    permissions: ChatPermissions
+    slow_mode_delay: int
+    message_auto_delete_time: int
+    has_aggressive_anti_spam_enabled: bool
+    has_hidden_members: bool
+    has_protected_content: bool
+    sticker_set_name: str
+    can_set_sticker_set: bool
+    linked_chat_id: int
+    location: ChatLocation
+
     def __init__(self, **kwargs):
         self.id = kwargs.get('id')
         self.type = kwargs.get('type')

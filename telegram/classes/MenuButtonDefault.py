@@ -1,4 +1,5 @@
 class MenuButtonDefault:
     type: str
+
     def __init__(self, **kwargs):
-        self.type = 'default'
+        self.type = kwargs.get('type')

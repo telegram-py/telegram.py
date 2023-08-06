@@ -1,11 +1,17 @@
+from telegram.classes.ChatInviteLink import ChatInviteLink
+from telegram.classes.Chat import Chat
+from telegram.classes.User import User
+
+
 class ChatJoinRequest:
-    chat : Chat
-    from_user : User
-    user_chat_id : int
-    date : int
-    bio : str
-    invite_link : ChatInviteLink
-    def __init__(self,**kwargs):
+    chat: Chat
+    from_user: User
+    user_chat_id: int
+    date: int
+    bio: str
+    invite_link: ChatInviteLink
+
+    def __init__(self, **kwargs):
         self.chat = Chat(**kwargs.get('chat', dict()))
         self.from_user = User(**kwargs.get('from_user', dict()))
         self.user_chat_id = kwargs.get('user_chat_id', 0)

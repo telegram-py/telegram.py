@@ -1,21 +1,25 @@
+from telegram.classes.User import User
+
+
 class ChatMemberAdministrator:
-    status : str
-    user : User
-    can_be_edited : bool
-    is_anonymous : bool
-    can_manage_chat : bool
-    can_delete_messages : bool
-    can_manage_voice_chats : bool
-    can_restrict_members : bool
-    can_promote_members : bool
-    can_change_info : bool
-    can_invite_users : bool
-    can_post_messages : bool
-    can_edit_messages : bool
-    can_pin_messages : bool
-    can_manage_topics : bool
-    custom_title : str
-    def __init__(self,**kwargs):
+    status: str
+    user: User
+    can_be_edited: bool
+    is_anonymous: bool
+    can_manage_chat: bool
+    can_delete_messages: bool
+    can_manage_voice_chats: bool
+    can_restrict_members: bool
+    can_promote_members: bool
+    can_change_info: bool
+    can_invite_users: bool
+    can_post_messages: bool
+    can_edit_messages: bool
+    can_pin_messages: bool
+    can_manage_topics: bool
+    custom_title: str
+
+    def __init__(self, **kwargs):
         self.status = kwargs.get('status', "")
         self.user = User(**kwargs.get('user', dict()))
         self.can_be_edited = kwargs.get('can_be_edited', False)

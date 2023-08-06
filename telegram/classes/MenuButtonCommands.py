@@ -1,4 +1,5 @@
 class MenuButtonCommands:
-    type : str
+    type: str
+
     def __init__(self, **kwargs):
-        self.type = 'commands'
+        self.type = kwargs.get('type')

@@ -1,17 +1,18 @@
 class ChatAdministratorRights:
-    is_anonymous : bool
-    can_manage_chat : bool
-    can_delete_messages : bool
-    can_manage_voice_chats : bool
-    can_restrict_members : bool
-    can_promote_members : bool
-    can_change_info : bool
-    can_invite_users : bool
-    can_post_messages : bool
-    can_edit_messages : bool
-    can_pin_messages : bool
-    can_manage_topics : bool
-    def __init__(self,**kwargs):
+    is_anonymous: bool
+    can_manage_chat: bool
+    can_delete_messages: bool
+    can_manage_voice_chats: bool
+    can_restrict_members: bool
+    can_promote_members: bool
+    can_change_info: bool
+    can_invite_users: bool
+    can_post_messages: bool
+    can_edit_messages: bool
+    can_pin_messages: bool
+    can_manage_topics: bool
+
+    def __init__(self, **kwargs):
         self.is_anonymous = kwargs.get('is_anonymous', False)
         self.can_manage_chat = kwargs.get('can_manage_chat', False)
         self.can_delete_messages = kwargs.get('can_delete_messages', False)

@@ -4,7 +4,7 @@ class Voice:
     duration: int
     mime_type: str
     file_size: int
-    
+
     def __init__(self, **kwargs):
         self.file_id = kwargs.get('file_id')
         self.file_unique_id = kwargs.get('file_unique_id')

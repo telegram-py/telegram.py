@@ -1,11 +1,15 @@
+from telegram.classes import KeyboardButton
+
+
 class ReplyKeyboardMarkup:
-    keyboard : list[list[KeyboardButton]]
-    is_persistent : bool
-    resize_keyboard : bool
-    one_time_keyboard : bool
-    input_field_placeholder : str
-    selective : bool
-    def __init__(self,**kwargs):
+    keyboard: list[list[KeyboardButton]]
+    is_persistent: bool
+    resize_keyboard: bool
+    one_time_keyboard: bool
+    input_field_placeholder: str
+    selective: bool
+
+    def __init__(self, **kwargs):
         self.keyboard = [list[KeyboardButton](s) for s in kwargs.get('keyboard', [])]
         self.is_persistent = kwargs.get('is_persistent', False)
         self.resize_keyboard = kwargs.get('resize_keyboard', False)

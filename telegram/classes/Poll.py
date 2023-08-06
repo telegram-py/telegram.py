@@ -1,18 +1,23 @@
+from telegram.classes.MessageEntity import MessageEntity
+from telegram.classes.PollOption import PollOption
+
+
 class Poll:
-    id : str
-    question : str
-    options : list[PollOption]
-    total_voter_count : int
-    is_closed : bool
-    is_anonymous : bool
-    type : str
-    allows_multiple_answers : bool
-    correct_option_id : int
-    explanation : str
-    explanation_entities : list[MessageEntity]
-    open_period : int
-    close_date : int
-    def __init__(self,**kwargs):
+    id: str
+    question: str
+    options: list[PollOption]
+    total_voter_count: int
+    is_closed: bool
+    is_anonymous: bool
+    type: str
+    allows_multiple_answers: bool
+    correct_option_id: int
+    explanation: str
+    explanation_entities: list[MessageEntity]
+    open_period: int
+    close_date: int
+
+    def __init__(self, **kwargs):
         self.id = kwargs.get('id')
         self.question = kwargs.get('question')
         self.options = [PollOption(**x) for x in kwargs.get('options')]

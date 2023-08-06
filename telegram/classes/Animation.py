@@ -1,3 +1,6 @@
+from telegram.classes.PhotoSize import PhotoSize
+
+
 class Animation:
     file_id: str
     file_unique_id: str

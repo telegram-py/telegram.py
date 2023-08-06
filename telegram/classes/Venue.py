@@ -1,3 +1,6 @@
+from telegram.classes.Location import Location
+
+
 class Venue:
     location: Location
     title: str
@@ -6,6 +9,7 @@ class Venue:
     foursquare_type: str
     google_place_id: str
     google_place_type: str
+
     def __init__(self, **kwargs):
         self.location = Location(**kwargs.get('location'))
         self.title = kwargs.get('title')
@@ -14,4 +18,3 @@ class Venue:
         self.foursquare_type = kwargs.get('foursquare_type')
         self.google_place_id = kwargs.get('google_place_id')
         self.google_place_type = kwargs.get('google_place_type')
-    

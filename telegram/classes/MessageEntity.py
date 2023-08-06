@@ -1,11 +1,15 @@
+from telegram.classes.User import User
+
+
 class MessageEntity:
-    type : str
-    offset : int
-    length : int
-    url : str
-    user : User
-    language : str
-    custom_emoji_id : str
+    type: str
+    offset: int
+    length: int
+    url: str
+    user: User
+    language: str
+    custom_emoji_id: str
+
     def __init__(self, **kwargs):
         self.type = kwargs.get('entity_type', None)
         self.offset = kwargs.get('offset', None)

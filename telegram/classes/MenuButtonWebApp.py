@@ -1,7 +1,11 @@
+from telegram.classes.WebAppInfo import WebAppInfo
+
+
 class MenuButtonWebApp:
-    type : str
-    text : str
-    web_app : WebAppInfo
+    type: str
+    text: str
+    web_app: WebAppInfo
+
     def __init__(self, **kwargs):
         self.type = 'web_app'
         self.text = str(kwargs.get('text', ''))

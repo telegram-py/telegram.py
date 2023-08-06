@@ -1,3 +1,6 @@
+from telegram.classes.PhotoSize import PhotoSize
+
+
 class Audio:
     file_id: str
     file_unique_id: str
@@ -8,6 +11,7 @@ class Audio:
     mime_type: str
     file_size: int
     thumbnail: PhotoSize
+
     def __init__(self, **kwargs):
         self.file_id: str = kwargs.get('file_id', '')
         self.file_unique_id: str = kwargs.get('file_unique_id', '')

@@ -1,10 +1,10 @@
 class PhotoSize:
-    file_id : str
-    file_unique_id : str
-    width : int
-    height : int
-    file_size : int
-    
+    file_id: str
+    file_unique_id: str
+    width: int
+    height: int
+    file_size: int
+
     def __init__(self, **kwargs):
         self.file_id: str = kwargs.get('file_id', '')
         self.file_unique_id: str = kwargs.get('file_unique_id', '')
